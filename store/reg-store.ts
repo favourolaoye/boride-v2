@@ -135,7 +135,7 @@ export const useRegistrationStore = create<RegistrationStore>((set, get) => ({
 
 submitForm: async () => {
   const { formData, validateStep } = get()
-
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
   // Validate all steps
   const isValid = validateStep(1) && validateStep(2) && validateStep(3)
   if (!isValid) return
@@ -143,7 +143,7 @@ submitForm: async () => {
   set({ isSubmitting: true })
 
   try {
-    const response = await axios.post("http://localhost:8080/api/student/register", formData,
+    const response = await axios.post(`${API_URL}/api/student/register`, formData,
       {
         headers: {
           "Content-Type": "application/json",
