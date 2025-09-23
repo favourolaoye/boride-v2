@@ -5,7 +5,7 @@ import Link from "next/link"
 export function FeaturesSection() {
   return (
     <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-8">
           {/* For Students */}
           <Card className="p-8 hover:shadow-lg transition-shadow">
