@@ -7,8 +7,8 @@ interface StepIndicatorProps {
 
 export function StepIndicator({ currentStep, totalSteps }: StepIndicatorProps) {
   const steps = [
-    { number: 1, label: "Personal Info" },
-    { number: 2, label: "Contact & ID" },
+    { number: 1, label: "Info" },
+    { number: 2, label: "Contact" },
     { number: 3, label: "Password" },
   ]
 
@@ -39,7 +39,7 @@ export function StepIndicator({ currentStep, totalSteps }: StepIndicatorProps) {
             </div>
             <span
               className={`
-                mt-2 text-xs md:text-sm font-medium
+                text-xs md:text-sm font-medium
                 ${currentStep >= step.number ? "text-gray-800" : "text-gray-500"}
               `}
             >

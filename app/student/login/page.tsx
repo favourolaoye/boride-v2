@@ -10,7 +10,6 @@ export default function StudentLogin() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     login();
-    router.push("/student/dashboard");
   };
 
   return (

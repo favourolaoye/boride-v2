@@ -41,8 +41,8 @@ export function RegistrationForm() {
                 <p className="text-gray-600">Join the community to get safe and affordable rides.</p>
               </div>
 
-              <div className="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 md:p-8">
-                <StepIndicator currentStep={currentStep} totalSteps={3} />
+              <div className="bg-white rounded-sm shadow-sm border border-gray-200 p-6 md:p-8">
+                <div className=""><StepIndicator currentStep={currentStep} totalSteps={3} /></div>
                 {renderStep()}
               </div>
 

@@ -3,6 +3,7 @@ import { create } from "zustand";
 import axios from "axios";
 import Cookies from "js-cookie";
 import { toast } from "sonner";
+
 type AuthState = {
   email: string;
   password: string;
@@ -51,7 +52,8 @@ export const useAuthStore = create<AuthState>((set, get) => ({
       Cookies.set("user", user, {path: "/", expires: 3});
       toast.success(msg);
     } catch (err: any) {
-      set({ error: err.response?.data?.message || "Login failed" });
+      set({ error: err.response?.data?.msg || "Login failed" });
+      toast.error(err?.response?.data?.msg);
     } finally {
       set({ loading: false });
     }
