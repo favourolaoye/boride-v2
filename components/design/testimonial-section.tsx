@@ -4,7 +4,7 @@ import { Star, ThumbsUp, MessageCircle } from "lucide-react"
 
 const testimonials = [
   {
-    name: "Sophia Clark",
+    name: "Adewale seunfunmi",
     date: "May 15, 2024",
     avatar: "/alex.jpg",
     initials: "SC",
@@ -14,7 +14,7 @@ const testimonials = [
     comments: 3,
   },
   {
-    name: "Ethan Miller",
+    name: "Joy Davids",
     date: "April 22, 2024",
     avatar: "/alex.jpg",
     initials: "EM",
@@ -24,7 +24,7 @@ const testimonials = [
     comments: 1,
   },
   {
-    name: "Olivia Davis",
+    name: "Princess Oluwaloju",
     date: "March 10, 2024",
     avatar: "/alex.jpg",
     initials: "OD",

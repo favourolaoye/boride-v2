@@ -2,25 +2,25 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 
 const teamMembers = [
   {
-    name: "John Doe",
+    name: "Precious",
     role: "Lead Developer",
     avatar: "/alex.jpg",
     initials: "JD",
   },
   {
-    name: "Jane Smith",
+    name: "Samuel",
     role: "UI/UX Designer",
     avatar: "/alex.jpg",
     initials: "JS",
   },
   {
-    name: "Samuel Green",
+    name: "Micheal Green",
     role: "Backend Engineer",
     avatar: "/alex.jpg",
     initials: "SG",
   },
   {
-    name: "Emily White",
+    name: "Web Flux",
     role: "Project Manager",
     avatar: "/alex.jpg",
     initials: "EW",
@@ -33,7 +33,7 @@ export function TeamSection() {
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Meet the Team</h2>
-          <p className="text-xl text-gray-600">The passionate individuals who brought RideOn to life.</p>
+          <p className="text-xl text-gray-600">The passionate individuals who brought borides to life.</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
