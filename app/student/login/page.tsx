@@ -16,8 +16,7 @@ export default function StudentLogin() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    const LOCAL_URL = "http://localhost:8080";
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
     // validations
     if (!email || !password) {
@@ -40,7 +39,7 @@ export default function StudentLogin() {
       setLoading(true);
       setError(null);
 
-      const res = await axios.post(`${LOCAL_URL}/api/student/login`, {
+      const res = await axios.post(`${API_URL}/api/student/login`, {
         email,
         password,
       });
@@ -48,7 +47,6 @@ export default function StudentLogin() {
       const { msg, token, user } = res.data;
       Cookies.set("token", token, { path: "/", expires: 3 });
       Cookies.set("user", JSON.stringify(user), { path: "/", expires: 3 });
-
       toast.success(msg);
       router.push("/dashboard/student");
     } catch (err: any) {
