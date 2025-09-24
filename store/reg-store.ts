@@ -63,7 +63,7 @@ export const useRegistrationStore = create<RegistrationStore>((set, get) => ({
   updateFormData: (data) =>
     set((state) => ({
       formData: { ...state.formData, ...data },
-      errors: {}, // Clear errors when user types
+      errors: {}, 
     })),
 
   setErrors: (errors) => set({ errors }),
@@ -135,7 +135,7 @@ export const useRegistrationStore = create<RegistrationStore>((set, get) => ({
 
 submitForm: async () => {
   const { formData, validateStep } = get()
-  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+  const API_URL = "https://boride-api.onrender.com";
   // Validate all steps
   const isValid = validateStep(1) && validateStep(2) && validateStep(3)
   if (!isValid) return

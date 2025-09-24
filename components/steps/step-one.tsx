@@ -36,7 +36,7 @@ export function StepOne() {
 
       <Button
         onClick={handleNext}
-        className="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-medium"
+        className="w-full bg-blue-900 hover:bg-blue-950 text-white py-3 rounded-lg font-medium"
         size="lg"
       >
         Next

@@ -53,7 +53,7 @@ export function StepThree() {
 
         <Button
           onClick={handleSubmit}
-          className="flex-1 bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-medium"
+          className="flex-1 bg-blue-900 hover:bg-blue-950 text-white py-3 rounded-lg font-medium"
           size="lg"
           disabled={isSubmitting}
         >

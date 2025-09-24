@@ -23,24 +23,24 @@ export function Navbar() {
             className={`fixed top-0 left-0 right-0 z-50 px-4 transition-all duration-300 ${isScrolled ? "bg-white border-b border-gray-100" : "bg-transparent"
                 }`}
         >
-            <div className="max-w-7xl mx-auto flex items-center justify-between">
+            <div className="max-w-7xl mx-auto flex items-center justify-between p-3">
                 <div className="flex items-center">
                     {isScrolled ? (
                         <Image
-                            src="/boride-black.png"
+                            src="/boride-black-crop.png"
                             alt="RideOn"
                             width={120}
                             height={100}
-                            className="h-20 w-auto"
+                            className="w-auto"
                             priority
                         />
                     ) : (
                         <Image
-                            src="/boride-white.png"
+                            src="/boride-white-crop.png"
                             alt="RideOn"
                             width={120}
                             height={100}
-                            className="h-20 w-auto"
+                            className="w-auto"
                             priority
                         />
                     )}
