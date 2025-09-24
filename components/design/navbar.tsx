@@ -27,7 +27,7 @@ export function Navbar() {
                 <div className="flex items-center">
                     {isScrolled ? (
                         <Image
-                            src="/boride-black-crop.png"
+                            src="/boride-black-crop.PNG"
                             alt="RideOn"
                             width={120}
                             height={100}
@@ -36,7 +36,7 @@ export function Navbar() {
                         />
                     ) : (
                         <Image
-                            src="/boride-white-crop.png"
+                            src="/boride-white-crop.PNG"
                             alt="RideOn"
                             width={120}
                             height={100}

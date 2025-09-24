@@ -66,7 +66,7 @@ export default function StudentLogin() {
       {/* Logo as top nav */}
       <div className="w-full pt-5 flex justify-center">
         <Image
-          src="/boride-black-crop.png"
+          src="/boride-black-crop.PNG"
           width={120}
           height={120}
           alt="borides"

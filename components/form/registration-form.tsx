@@ -34,7 +34,7 @@ export function RegistrationForm() {
           ) : (
             <>
               <div className="flex justify-center mb-3">
-                <Image src="/boride-black-crop.png" width={100} height={100} alt="boride" className="object-cover" priority/>
+                <Image src="/boride-black-crop.PNG" width={100} height={100} alt="boride" className="object-cover" priority/>
               </div>
               <div className="text-center mb-8">
                 <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Create account</h1>
