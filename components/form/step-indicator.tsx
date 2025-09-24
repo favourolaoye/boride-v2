@@ -5,7 +5,7 @@ interface StepIndicatorProps {
   totalSteps: number
 }
 
-export function StepIndicator({ currentStep, totalSteps }: StepIndicatorProps) {
+export function StepIndicator({ currentStep }: StepIndicatorProps) {
   const steps = [
     { number: 1, label: "Info" },
     { number: 2, label: "Contact" },

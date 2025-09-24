@@ -48,9 +48,14 @@ export default function StudentLogin() {
       Cookies.set("user", JSON.stringify(user), { path: "/", expires: 3 });
       toast.success(msg);
       router.push("/dashboard/student");
-    } catch (err: any) {
-      setError(err.response?.data?.msg || "Login failed");
-      toast.error(err?.response?.data?.msg);
+    } catch (err) {
+      if (axios.isAxiosError(err)) {
+        setError(err.response?.data?.msg || "Login failed");
+        toast.error(err.response?.data?.msg);
+      } else {
+        setError("Login failed");
+        toast.error("Login failed");
+      }
     } finally {
       setLoading(false);
     }

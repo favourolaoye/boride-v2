@@ -1,6 +1,6 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Card, CardContent } from "@/components/ui/card"
-import { Star, ThumbsUp, MessageCircle } from "lucide-react"
+// import { Star, ThumbsUp, MessageCircle } from "lucide-react"
 
 const testimonials = [
   {
@@ -61,9 +61,9 @@ export function TestimonialsSection() {
 
                 {/* Rating */}
                 <div className="flex items-center gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
+                  {/* {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                  ))}
+                  ))} */}
                 </div>
 
                 {/* Review Text */}
