@@ -20,7 +20,7 @@ export function HeroSection() {
           <p className="text-xl text-gray-200 mb-8 leading-relaxed">
             Request a ride, hop in and go. Visit any destination with ease and comfort.
           </p>
-          <Link href='/students/login'>
+          <Link href='/student/login'>
           <Button size="lg" className="text-lg px-8 py-3 bg-transparent border border-ring-white hover:bg-white hover:text-black">
             Order a Ride
           </Button>
