@@ -10,8 +10,7 @@ import Cookies from "js-cookie";
 import { toast } from "sonner";
 
 export default function StudentLogin() {
-  const { email, password, setEmail, setPassword, loading, error, setLoading, setError } =
-    useAuthStore();
+  const { email, password, setEmail, setPassword, loading, error, setLoading, setError } = useAuthStore();
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {

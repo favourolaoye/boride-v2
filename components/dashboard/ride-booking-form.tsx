@@ -42,7 +42,7 @@ export function RideBookingForm() {
 
         <Button
           onClick={handleOrderRide}
-          className="h-12 bg-rideon-blue hover:bg-rideon-blue/90 text-white font-medium text-base px-6"
+          className="h-12 bg-black hover:bg-rideon-blue/90 text-white font-medium text-base px-6"
         >
           <Car className="w-5 h-5 mr-2" />
           Order Ride

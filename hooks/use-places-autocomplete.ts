@@ -8,54 +8,42 @@ interface PlaceSuggestion {
   place_id: string
 }
 
-export function usePlacesAutocomplete(apiKey?: string) {
+export function usePlacesAutocomplete() {
   const [suggestions, setSuggestions] = useState<PlaceSuggestion[]>([])
   const [loading, setLoading] = useState(false)
 
-  const getSuggestions = useCallback(
-    async (input: string) => {
-      if (!input || input.length < 2) {
-        setSuggestions([])
-        return
-      }
+  const getSuggestions = useCallback(async (input: string) => {
+    if (!input || input.length < 2) {
+      setSuggestions([])
+      return
+    }
 
-      if (!apiKey) {
-        console.error("Google API key is required for Places Autocomplete")
-        return
-      }
+    setLoading(true)
 
-      setLoading(true)
+    try {
+      // Call your Next.js API route instead of Google directly
+      const response = await fetch(`/api/autocomplete?input=${encodeURIComponent(input)}`)
+      const data = await response.json()
 
-      try {
-        const response = await fetch(
-          `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${encodeURIComponent(
-            input
-          )}&types=geocode&key=${apiKey}`
+      if (data.predictions && data.status === "OK") {
+        setSuggestions(
+          data.predictions.map((p: any) => ({
+            id: p.place_id,
+            description: p.description,
+            place_id: p.place_id,
+          }))
         )
-
-        const data = await response.json()
-
-        if (data.predictions || data.status === "OK") {
-          setSuggestions(
-            data.predictions.map((p: any) => ({
-              id: p.place_id,
-              description: p.description,
-              place_id: p.place_id,
-            }))
-          )
-        } else {
-          console.error("Places API error:", data.status, data.error_message)
-          setSuggestions([])
-        }
-      } catch (error) {
-        console.error("Failed to get suggestions:", error)
+      } else {
+        console.error("Places API error:", data.status, data.error_message)
         setSuggestions([])
-      } finally {
-        setLoading(false)
       }
-    },
-    [apiKey]
-  )
+    } catch (error) {
+      console.error("Failed to get suggestions:", error)
+      setSuggestions([])
+    } finally {
+      setLoading(false)
+    }
+  }, [])
 
   return {
     suggestions,

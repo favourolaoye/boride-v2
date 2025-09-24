@@ -31,10 +31,8 @@ export function LocationInput({
   const inputRef = useRef<HTMLInputElement>(null)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
-  const apiKey = process.env.NEXT_PUBLIC_GOOGLE_API_KEY as string
-
-  const { address, loading: locationLoading, getCurrentLocation } = useLocation(apiKey)
-  const { suggestions, loading: suggestionsLoading, getSuggestions } = usePlacesAutocomplete(apiKey)
+  const { address, loading: locationLoading, getCurrentLocation } = useLocation()
+  const { suggestions, loading: suggestionsLoading, getSuggestions } = usePlacesAutocomplete()
 
   useEffect(() => {
     setInputValue(value)

@@ -10,7 +10,7 @@ interface LocationState {
   error: string | null
 }
 
-export function useLocation(apiKey: string) {
+export function useLocation() {
   const [location, setLocation] = useState<LocationState>({
     latitude: null,
     longitude: null,
@@ -32,7 +32,7 @@ export function useLocation(apiKey: string) {
         const { latitude, longitude } = position.coords
 
         try {
-          const address = await reverseGeocode(latitude, longitude, apiKey)
+          const address = await reverseGeocode(latitude, longitude)
 
           setLocation({
             latitude,
@@ -72,12 +72,9 @@ export function useLocation(apiKey: string) {
   }
 }
 
-// ✅ Real reverse geocoding with Google API
-async function reverseGeocode(lat: number, lng: number, apiKey: string): Promise<string> {
-  const response = await fetch(
-    `https://maps.googleapis.com/maps/api/geocode/json?latlng=${lat},${lng}&key=${apiKey}`
-  )
-
+// 🔑 Calls your Next.js API route instead of Google directly
+async function reverseGeocode(lat: number, lng: number): Promise<string> {
+  const response = await fetch(`/api/geocode?lat=${lat}&lng=${lng}`)
   const data = await response.json()
 
   if (data.status !== "OK" || !data.results.length) {
